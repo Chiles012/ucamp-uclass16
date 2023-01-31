@@ -26,7 +26,7 @@ class Personaje {
     #habilidadEspecial = "";
 
     constructor(id, nombre, poder, habilidadEspecial) {
-        this.id = id;
+        this.id = !id ? this.id : id; // validacion ternaria
         this.nombre = nombre;
         this.poder = poder;
         this.#habilidadEspecial = habilidadEspecial;
@@ -103,9 +103,8 @@ class Villano extends Personaje {
 
 }
 
-const majinbu = new Villano(1, 'Majinbu', "Hacer chocolate", 'Dormir', 80, 80);
+const majinbu = new Villano(1, 'Majinbu', 'Dormir', 80, 80);
 const goku = new Heroe(1, "Goku", 'HameHameHa', "Henkidama", "kimono", 'Milk', 1);
-
 
 majinbu.volar()
 goku.volar()
